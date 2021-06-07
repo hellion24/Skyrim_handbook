@@ -1,6 +1,352 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" />
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fon2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/lesa_sibirii" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="383dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="4dp"
+            android:alpha="0.8"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toStartOf="@+id/fon2"
+            app:layout_constraintTop_toTopOf="@+id/fon2"
+            app:srcCompat="@drawable/knopkaser" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text='Информационно-справочная система "Контроль экологического состояния местности"'
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/fon2" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="376dp"
+            android:layout_height="79dp"
+            android:alpha="0.8"
+            android:cropToPadding="false"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            app:srcCompat="@drawable/knopkaser" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Выберите федеральный округ"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="384dp"
+            android:layout_height="612dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+                android:id="@+id/centr"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/yuzh"
+                app:layout_constraintEnd_toStartOf="@+id/sevz"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/knopkaser" />
+
+            <ImageButton
+                android:id="@+id/yuzh"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/priv"
+                app:layout_constraintEnd_toStartOf="@+id/sevk"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/centr"
+                app:srcCompat="@drawable/knopkaser" />
+
+            <ImageButton
+                android:id="@+id/sevk"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/ural"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/yuzh"
+                app:layout_constraintTop_toBottomOf="@+id/sevz"
+                app:srcCompat="@drawable/knopkaser" />
+
+            <ImageButton
+                android:id="@+id/priv"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/sibir"
+                app:layout_constraintEnd_toStartOf="@+id/ural"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/yuzh"
+                app:srcCompat="@drawable/knopkaser"
+                />
+
+            <ImageButton
+                android:id="@+id/sibir"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/svyaz"
+                app:layout_constraintEnd_toStartOf="@+id/dalv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/priv"
+                app:srcCompat="@drawable/knopkaser" />
+
+            <ImageButton
+                android:id="@+id/svyaz"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="64dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dann"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sibir"
+                app:srcCompat="@drawable/knopkaser" />
+
+            <ImageButton
+                android:id="@+id/dann"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="64dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/svyaz"
+                app:layout_constraintTop_toBottomOf="@+id/dalv"
+                app:srcCompat="@drawable/knopkaser" />
+
+            <ImageButton
+                android:id="@+id/dalv"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/dann"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sibir"
+                app:layout_constraintTop_toBottomOf="@+id/ural"
+                app:srcCompat="@drawable/knopkaser" />
+
+            <ImageButton
+                android:id="@+id/ural"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/dalv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/priv"
+                app:layout_constraintTop_toBottomOf="@+id/sevk"
+                app:srcCompat="@drawable/knopkaser" />
+
+            <ImageButton
+                android:id="@+id/sevz"
+                android:layout_width="135dp"
+                android:layout_height="50dp"
+                android:background="@color/cardview_shadow_end_color"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/sevk"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/centr"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/knopkaser" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Уральский"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ural"
+                app:layout_constraintEnd_toEndOf="@+id/ural"
+                app:layout_constraintStart_toStartOf="@+id/ural"
+                app:layout_constraintTop_toTopOf="@+id/ural" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Изменить данные"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/dann"
+                app:layout_constraintEnd_toEndOf="@+id/dann"
+                app:layout_constraintStart_toStartOf="@+id/dann"
+                app:layout_constraintTop_toTopOf="@+id/dann" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Южный"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/yuzh"
+                app:layout_constraintEnd_toEndOf="@+id/yuzh"
+                app:layout_constraintStart_toStartOf="@+id/yuzh"
+                app:layout_constraintTop_toTopOf="@+id/yuzh" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Дальневосточный"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/dalv"
+                app:layout_constraintEnd_toEndOf="@+id/dalv"
+                app:layout_constraintStart_toStartOf="@+id/dalv"
+                app:layout_constraintTop_toTopOf="@+id/dalv" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Центральный"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/centr"
+                app:layout_constraintEnd_toEndOf="@+id/centr"
+                app:layout_constraintStart_toStartOf="@+id/centr"
+                app:layout_constraintTop_toTopOf="@+id/centr" />
+
+            <TextView
+                android:id="@+id/svya"
+                android:layout_width="134dp"
+                android:layout_height="49dp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Связь с разработчиком"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/svyaz"
+                app:layout_constraintEnd_toEndOf="@+id/svyaz"
+                app:layout_constraintStart_toStartOf="@+id/svyaz"
+                app:layout_constraintTop_toTopOf="@+id/svyaz" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Сибирский"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/sibir"
+                app:layout_constraintEnd_toEndOf="@+id/sibir"
+                app:layout_constraintStart_toStartOf="@+id/sibir"
+                app:layout_constraintTop_toTopOf="@+id/sibir" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Северо-Западный"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/sevz"
+                app:layout_constraintEnd_toEndOf="@+id/sevz"
+                app:layout_constraintStart_toStartOf="@+id/sevz"
+                app:layout_constraintTop_toTopOf="@+id/sevz" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Северо-Кавказский"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/sevk"
+                app:layout_constraintEnd_toEndOf="@+id/sevk"
+                app:layout_constraintStart_toStartOf="@+id/sevk"
+                app:layout_constraintTop_toTopOf="@+id/sevk" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Приволжский"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/priv"
+                app:layout_constraintEnd_toEndOf="@+id/priv"
+                app:layout_constraintStart_toStartOf="@+id/priv"
+                app:layout_constraintTop_toTopOf="@+id/priv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
