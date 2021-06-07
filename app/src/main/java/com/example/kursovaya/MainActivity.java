@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     int logoTimer = 0;
                     while(logoTimer < 1000) {
-                        sleep(1000);
+                        sleep(100);
                         logoTimer = logoTimer +100;
                     };
                     Intent i=new Intent(MainActivity.this,Menu.class);
