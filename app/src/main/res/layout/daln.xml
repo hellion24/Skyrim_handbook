@@ -26,7 +26,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="393dp"
-            android:layout_height="1050dp">
+            android:layout_height="1055dp">
 
             <ImageButton
                 android:id="@+id/dann3"
@@ -214,7 +214,7 @@
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="349dp"
-                android:layout_height="670dp"
+                android:layout_height="890dp"
                 android:layout_marginTop="12dp"
                 android:alpha="0.8"
                 android:scaleType="fitXY"
@@ -233,7 +233,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView6"
                 app:layout_constraintVertical_bias="0.144"
-                app:srcCompat="@drawable/centr" />
+                app:srcCompat="@drawable/daln" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -252,16 +252,12 @@
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="321dp"
-                android:layout_height="634dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:fontFamily="serif"
-                android:text="Центральный федеральный округ расположен на Восточно-Европейской равнине, есть ряд возвышенностей (Среднерусская, Валдайская), однако в целом территорию округа можно считать равнинной, высоких гор здесь нет. Наивысшая точка – 347 метров. Природные зоны: смешанный лес и широколиственный лес преимущественно на севере, степь и лесостепь преимущественно на юге.
-
-Климат на всей территории Центрального федерального округа является умеренно-континентальным, средняя температура зависит от широт, колеблется от -7 до -14 в январе и от +16 до +22 градусов по Цельсию в июле.
-
-Крупнейшие реки ЦФО: Западная Двига, Днепр, Дон, Волга. Крупных озер практически нет, однако есть множество водохранилищ, которые и являются самыми значимыми водными объектами (Рыбинское, Костромское и т.д.)."
-                android:textColor="#ffffff"
+                android:textColor="#F8F5F5"
                 android:textSize="18sp"
+                android:text="Особенности физико-географического положения Дальневосточного региона определили разнообразие природно-климатических условий - от резко континентального до муссонного климата юго-востока региона. Климат всего Дальнего Востока определяется взаимодействием континентальных и морских воздушных масс умеренных широт. Взаимодействие континентальных и морских воздушных масс, северных и южных потоков, сложный рельеф, в котором сочетаются горы и низменности, замкнутые котловины, - все это в совокупности приводит к разнообразию растительного покрова Дальнего Востока, к присутствию в его составе северных и южных видов. На северных низменностях располагаются тундры, в которые по рекам с юга заходят лиственничные леса. Большая часть полуострова Камчатки занята редкостойными лесами из каменной березы и лиственницы, а по склонам гор произрастают заросли кедрового стланика с ольхой и лишайниками. Для севера о. Сахалин характерны редкостойные лиственничные леса, а для юга - непроходимые заросли бамбука и елово-пихтовая тайга."
                 app:layout_constraintEnd_toEndOf="@+id/imageView7"
                 app:layout_constraintStart_toStartOf="@+id/imageView7"
                 app:layout_constraintTop_toTopOf="@+id/imageView7" />

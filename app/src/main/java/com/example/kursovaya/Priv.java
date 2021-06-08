@@ -9,14 +9,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Centr extends AppCompatActivity {
+public class Priv extends AppCompatActivity {
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.centr);
+        setContentView(R.layout.priv);
         ImageButton back = (ImageButton)findViewById(R.id.dann3);
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +29,7 @@ public class Centr extends AppCompatActivity {
 
                     public void onFinish() {
                         back.setImageResource(R.drawable.knopkaser);
-                        Intent i = new Intent(Centr.this, Menu.class);
+                        Intent i = new Intent(Priv.this, Menu.class);
                         startActivity(i);
                     }
                 }.start();
@@ -40,8 +40,8 @@ public class Centr extends AppCompatActivity {
         vozd = (TextView)findViewById(R.id.textView30);
         voda = (TextView)findViewById(R.id.textView32);
         poch = (TextView)findViewById(R.id.textView34);
-        vozd.setText(Sost.get(0,0));
-        voda.setText(Sost.get(0,1));
-        poch.setText(Sost.get(0,2));
+        vozd.setText(Sost.get(4,0));
+        voda.setText(Sost.get(4,1));
+        poch.setText(Sost.get(4,2));
     }
 }

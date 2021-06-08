@@ -26,7 +26,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="393dp"
-            android:layout_height="1050dp">
+            android:layout_height="1055dp">
 
             <ImageButton
                 android:id="@+id/dann3"
@@ -214,7 +214,7 @@
             <ImageView
                 android:id="@+id/imageView7"
                 android:layout_width="349dp"
-                android:layout_height="670dp"
+                android:layout_height="710dp"
                 android:layout_marginTop="12dp"
                 android:alpha="0.8"
                 android:scaleType="fitXY"
@@ -233,7 +233,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView6"
                 app:layout_constraintVertical_bias="0.144"
-                app:srcCompat="@drawable/centr" />
+                app:srcCompat="@drawable/yuzh" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -252,15 +252,15 @@
             <TextView
                 android:id="@+id/textView19"
                 android:layout_width="321dp"
-                android:layout_height="634dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:fontFamily="serif"
-                android:text="Центральный федеральный округ расположен на Восточно-Европейской равнине, есть ряд возвышенностей (Среднерусская, Валдайская), однако в целом территорию округа можно считать равнинной, высоких гор здесь нет. Наивысшая точка – 347 метров. Природные зоны: смешанный лес и широколиственный лес преимущественно на севере, степь и лесостепь преимущественно на юге.
+                android:text="Южный федеральный округ – самый теплый из всех российских федеральных округов, здесь самый мягкий и теплый климат. Это создает благоприятные условия для туризма, особенно для курортного (побережье Черного моря), а также делает возможным выращивать ряд сельскохозяйственных культур, которые в других регионах России не выращивают (бахчеводство и т.д.).
 
-Климат на всей территории Центрального федерального округа является умеренно-континентальным, средняя температура зависит от широт, колеблется от -7 до -14 в январе и от +16 до +22 градусов по Цельсию в июле.
+Крупнейшие реки Южного федерального округа – Волга, Кубань, Дон. Крупнейший водоем – Цимлянское водохранилище. Озер в округе не слишком много (особенно, если сравнивать с некоторыми другими регионами России), крупнейшее озеро – Маныч-Гудило.
 
-Крупнейшие реки ЦФО: Западная Двига, Днепр, Дон, Волга. Крупных озер практически нет, однако есть множество водохранилищ, которые и являются самыми значимыми водными объектами (Рыбинское, Костромское и т.д.)."
-                android:textColor="#ffffff"
+ЮФО также характеризуется небольшими лесными ресурсами, однако стоит учитывать, что в лесном фонде есть определенные особенности, так, здесь весь запас буковых лесов РФ., а также большая часть других ценных пород деревьев. Однако в целом ландшафт можно охарактеризовать по большей части как равнинный (исключая самые южные регионы)."
+                android:textColor="#F8F5F5"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageView7"
                 app:layout_constraintStart_toStartOf="@+id/imageView7"
