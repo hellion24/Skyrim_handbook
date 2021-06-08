@@ -55,48 +55,48 @@ public class Izm extends AppCompatActivity {
 
 
 
-                        if(((vozd.getText().toString()=="0")||(vozd.getText().toString()=="1")||(vozd.getText().toString()=="2"))&&((voda.getText().toString()=="0")||(voda.getText().toString()=="1")||(voda.getText().toString()=="2"))&&((poch.getText().toString()=="0")||(poch.getText().toString()=="1")||(poch.getText().toString()=="2"))) {
+                        if(((vozd.getText().toString().equals("0"))||(vozd.getText().toString().equals("1"))||(vozd.getText().toString().equals("2")))&&((voda.getText().toString().equals("0"))||(voda.getText().toString().equals("1"))||(voda.getText().toString().equals("2")))&&((poch.getText().toString().equals("0"))||(poch.getText().toString().equals("1"))||(poch.getText().toString().equals("2")))) {
                             osh.setText("Данные успешно изменены");
                             switch (nazv.getText().toString()) {
                                 case ("Центральный"):
-                                    Sost.set(0,0,Integer.parseInt (vozd.toString().trim ()));
-                                    Sost.set(0,1,Integer.parseInt (voda.toString().trim ()));
-                                    Sost.set(0,2,Integer.parseInt (poch.toString().trim ()));
+                                    Sost.set(0,0,Integer.parseInt (vozd.getText().toString().trim ()));
+                                    Sost.set(0,1,Integer.parseInt (voda.getText().toString().trim ()));
+                                    Sost.set(0,2,Integer.parseInt (poch.getText().toString().trim ()));
                                     break;
                                 case ("Северо-Западный"):
-                                    Sost.set(1,0,Integer.parseInt (vozd.toString().trim ()));
-                                    Sost.set(1,1,Integer.parseInt (voda.toString().trim ()));
-                                    Sost.set(1,2,Integer.parseInt (poch.toString().trim ()));
+                                    Sost.set(1,0,Integer.parseInt (vozd.getText().toString().trim ()));
+                                    Sost.set(1,1,Integer.parseInt (voda.getText().toString().trim ()));
+                                    Sost.set(1,2,Integer.parseInt (poch.getText().toString().trim ()));
                                     break;
                                 case ("Южный"):
-                                    Sost.set(2,0,Integer.parseInt (vozd.toString().trim ()));
-                                    Sost.set(2,1,Integer.parseInt (voda.toString().trim ()));
-                                    Sost.set(2,2,Integer.parseInt (poch.toString().trim ()));
+                                    Sost.set(2,0,Integer.parseInt (vozd.getText().toString().trim ()));
+                                    Sost.set(2,1,Integer.parseInt (voda.getText().toString().trim ()));
+                                    Sost.set(2,2,Integer.parseInt (poch.getText().toString().trim ()));
                                     break;
                                 case ("Северо-Кавказский"):
-                                    Sost.set(3,0,Integer.parseInt (vozd.toString().trim ()));
-                                    Sost.set(3,1,Integer.parseInt (voda.toString().trim ()));
-                                    Sost.set(3,2,Integer.parseInt (poch.toString().trim ()));
+                                    Sost.set(3,0,Integer.parseInt (vozd.getText().toString().trim ()));
+                                    Sost.set(3,1,Integer.parseInt (voda.getText().toString().trim ()));
+                                    Sost.set(3,2,Integer.parseInt (poch.getText().toString().trim ()));
                                     break;
                                 case ("Приволжский"):
-                                    Sost.set(4,0,Integer.parseInt (vozd.toString().trim ()));
-                                    Sost.set(4,1,Integer.parseInt (voda.toString().trim ()));
-                                    Sost.set(4,2,Integer.parseInt (poch.toString().trim ()));
+                                    Sost.set(4,0,Integer.parseInt (vozd.getText().toString().trim ()));
+                                    Sost.set(4,1,Integer.parseInt (voda.getText().toString().trim ()));
+                                    Sost.set(4,2,Integer.parseInt (poch.getText().toString().trim ()));
                                     break;
                                 case ("Уральский"):
-                                    Sost.set(5,0,Integer.parseInt (vozd.toString().trim ()));
-                                    Sost.set(5,1,Integer.parseInt (voda.toString().trim ()));
-                                    Sost.set(5,2,Integer.parseInt (poch.toString().trim ()));
+                                    Sost.set(5,0,Integer.parseInt (vozd.getText().toString().trim ()));
+                                    Sost.set(5,1,Integer.parseInt (voda.getText().toString().trim ()));
+                                    Sost.set(5,2,Integer.parseInt (poch.getText().toString().trim ()));
                                     break;
                                 case ("Сибирский"):
-                                    Sost.set(6,0,Integer.parseInt (vozd.toString().trim ()));
-                                    Sost.set(6,1,Integer.parseInt (voda.toString().trim ()));
-                                    Sost.set(6,2,Integer.parseInt (poch.toString().trim ()));
+                                    Sost.set(6,0,Integer.parseInt (vozd.getText().toString().trim ()));
+                                    Sost.set(6,1,Integer.parseInt (voda.getText().toString().trim ()));
+                                    Sost.set(6,2,Integer.parseInt (poch.getText().toString().trim ()));
                                     break;
                                 case ("Дальневосточный"):
-                                    Sost.set(7,0,Integer.parseInt (vozd.toString().trim ()));
-                                    Sost.set(7,1,Integer.parseInt (voda.toString().trim ()));
-                                    Sost.set(7,2,Integer.parseInt (poch.toString().trim ()));
+                                    Sost.set(7,0,Integer.parseInt (vozd.getText().toString().trim ()));
+                                    Sost.set(7,1,Integer.parseInt (voda.getText().toString().trim ()));
+                                    Sost.set(7,2,Integer.parseInt (poch.getText().toString().trim ()));
                                     break;
                                 default:
                                     osh.setText("Ошибка при вводе данных");
