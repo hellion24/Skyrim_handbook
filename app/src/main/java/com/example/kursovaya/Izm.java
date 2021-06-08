@@ -41,7 +41,7 @@ public class Izm extends AppCompatActivity {
                 }.start();
             }
         });
-
+        TextView osh = (TextView)findViewById(R.id.osh);
         change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +56,7 @@ public class Izm extends AppCompatActivity {
 
 
                         if(((vozd.getText().toString()=="0")||(vozd.getText().toString()=="1")||(vozd.getText().toString()=="2"))&&((voda.getText().toString()=="0")||(voda.getText().toString()=="1")||(voda.getText().toString()=="2"))&&((poch.getText().toString()=="0")||(poch.getText().toString()=="1")||(poch.getText().toString()=="2"))) {
+                            osh.setText("Данные успешно изменены");
                             switch (nazv.getText().toString()) {
                                 case ("Центральный"):
                                     Sost.set(0,0,Integer.parseInt (vozd.toString().trim ()));
@@ -97,7 +98,8 @@ public class Izm extends AppCompatActivity {
                                     Sost.set(7,1,Integer.parseInt (voda.toString().trim ()));
                                     Sost.set(7,2,Integer.parseInt (poch.toString().trim ()));
                                     break;
-
+                                default:
+                                    osh.setText("Ошибка при вводе данных");
                             }
                         }
 

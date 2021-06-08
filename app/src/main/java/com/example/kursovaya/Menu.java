@@ -181,5 +181,24 @@ public class Menu extends AppCompatActivity {
                 }.start();
             }
         });
+
+        dann.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dann.setImageResource(R.drawable.knopkaser_nazh);
+                new CountDownTimer(300, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    public void onFinish() {
+                        dann.setImageResource(R.drawable.knopkaser);
+                        Intent i = new Intent(Menu.this, Admin.class);
+                        startActivity(i);
+                    }
+                }.start();
+            }
+        });
+
+
     }
 }

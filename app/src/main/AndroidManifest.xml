@@ -36,6 +36,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Daln"
             android:screenOrientation="portrait"/>
+        <activity android:name=".Izm"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Admin"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
