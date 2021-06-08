@@ -20,6 +20,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Contacts"
             android:screenOrientation="portrait"/>
+        <activity android:name=".Centr"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

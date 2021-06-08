@@ -44,5 +44,21 @@ public class Menu extends AppCompatActivity {
                 }.start();
             }
         });
+        centr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                centr.setImageResource(R.drawable.knopkaser_nazh);
+                new CountDownTimer(300, 1000) {
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    public void onFinish() {
+                        centr.setImageResource(R.drawable.knopkaser);
+                        Intent i = new Intent(Menu.this, Centr.class);
+                        startActivity(i);
+                    }
+                }.start();
+            }
+        });
     }
 }
