@@ -1,38 +1,28 @@
-package com.example.kursovaya;
+package com.example.kursovaya
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.view.View;
-import android.widget.ImageButton;
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.kursovaya.R
+import android.widget.ImageButton
+import android.os.CountDownTimer
+import android.content.Intent
+import android.view.View
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Contacts extends AppCompatActivity {
-
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.contacts);
-        ImageButton back = (ImageButton)findViewById(R.id.dann2);
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                back.setImageResource(R.drawable.knopkaser_nazh);
-                new CountDownTimer(300, 1000) {
-                    public void onTick(long millisUntilFinished) {
-                    }
-
-                    public void onFinish() {
-                        back.setImageResource(R.drawable.knopkaser);
-                        Intent i = new Intent(Contacts.this, Menu.class);
-                        startActivity(i);
-                    }
-                }.start();
-            }
-        });
+class Contacts : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.contacts)
+        val back = findViewById<View>(R.id.dann2) as ImageButton
+        back.setOnClickListener {
+            back.setImageResource(R.drawable.knopkaser_nazh)
+            object : CountDownTimer(300, 1000) {
+                override fun onTick(millisUntilFinished: Long) {}
+                override fun onFinish() {
+                    back.setImageResource(R.drawable.knopkaser)
+                    val i = Intent(this@Contacts, Menu::class.java)
+                    startActivity(i)
+                }
+            }.start()
+        }
     }
 }

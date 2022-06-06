@@ -1,115 +1,96 @@
-package com.example.kursovaya;
+package com.example.kursovaya
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.kursovaya.R
+import android.widget.ImageButton
+import android.widget.EditText
+import android.os.CountDownTimer
+import android.content.Intent
+import android.view.View
+import android.widget.TextView
+import com.example.kursovaya.Sost
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Izm extends AppCompatActivity {
-
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.izm);
-        ImageButton back = (ImageButton)findViewById(R.id.dann3);
-        ImageButton change = (ImageButton)findViewById(R.id.dann4);
-        EditText nazv, vozd, voda, poch;
-        nazv = (EditText)findViewById(R.id.nazvReg);
-        vozd = (EditText)findViewById(R.id.sostVozd);
-        voda = (EditText)findViewById(R.id.sostVod);
-        poch = (EditText)findViewById(R.id.sostPoch);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                back.setImageResource(R.drawable.knopkaser_nazh);
-                new CountDownTimer(300, 1000) {
-                    public void onTick(long millisUntilFinished) {
-                    }
-
-                    public void onFinish() {
-                        back.setImageResource(R.drawable.knopkaser);
-                        Intent i = new Intent(Izm.this, Menu.class);
-                        startActivity(i);
-                    }
-                }.start();
-            }
-        });
-        TextView osh = (TextView)findViewById(R.id.osh);
-        change.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                change.setImageResource(R.drawable.knopkaser_nazh);
-                new CountDownTimer(300, 1000) {
-                    public void onTick(long millisUntilFinished) {
-                    }
-
-                    public void onFinish() {
-                        change.setImageResource(R.drawable.knopkaser);
-
-
-
-                        if(((vozd.getText().toString().equals("0"))||(vozd.getText().toString().equals("1"))||(vozd.getText().toString().equals("2")))&&((voda.getText().toString().equals("0"))||(voda.getText().toString().equals("1"))||(voda.getText().toString().equals("2")))&&((poch.getText().toString().equals("0"))||(poch.getText().toString().equals("1"))||(poch.getText().toString().equals("2")))) {
-                            osh.setText("Данные успешно изменены");
-                            switch (nazv.getText().toString()) {
-                                case ("Центральный"):
-                                    Sost.set(0,0,Integer.parseInt (vozd.getText().toString().trim ()));
-                                    Sost.set(0,1,Integer.parseInt (voda.getText().toString().trim ()));
-                                    Sost.set(0,2,Integer.parseInt (poch.getText().toString().trim ()));
-                                    break;
-                                case ("Северо-Западный"):
-                                    Sost.set(1,0,Integer.parseInt (vozd.getText().toString().trim ()));
-                                    Sost.set(1,1,Integer.parseInt (voda.getText().toString().trim ()));
-                                    Sost.set(1,2,Integer.parseInt (poch.getText().toString().trim ()));
-                                    break;
-                                case ("Южный"):
-                                    Sost.set(2,0,Integer.parseInt (vozd.getText().toString().trim ()));
-                                    Sost.set(2,1,Integer.parseInt (voda.getText().toString().trim ()));
-                                    Sost.set(2,2,Integer.parseInt (poch.getText().toString().trim ()));
-                                    break;
-                                case ("Северо-Кавказский"):
-                                    Sost.set(3,0,Integer.parseInt (vozd.getText().toString().trim ()));
-                                    Sost.set(3,1,Integer.parseInt (voda.getText().toString().trim ()));
-                                    Sost.set(3,2,Integer.parseInt (poch.getText().toString().trim ()));
-                                    break;
-                                case ("Приволжский"):
-                                    Sost.set(4,0,Integer.parseInt (vozd.getText().toString().trim ()));
-                                    Sost.set(4,1,Integer.parseInt (voda.getText().toString().trim ()));
-                                    Sost.set(4,2,Integer.parseInt (poch.getText().toString().trim ()));
-                                    break;
-                                case ("Уральский"):
-                                    Sost.set(5,0,Integer.parseInt (vozd.getText().toString().trim ()));
-                                    Sost.set(5,1,Integer.parseInt (voda.getText().toString().trim ()));
-                                    Sost.set(5,2,Integer.parseInt (poch.getText().toString().trim ()));
-                                    break;
-                                case ("Сибирский"):
-                                    Sost.set(6,0,Integer.parseInt (vozd.getText().toString().trim ()));
-                                    Sost.set(6,1,Integer.parseInt (voda.getText().toString().trim ()));
-                                    Sost.set(6,2,Integer.parseInt (poch.getText().toString().trim ()));
-                                    break;
-                                case ("Дальневосточный"):
-                                    Sost.set(7,0,Integer.parseInt (vozd.getText().toString().trim ()));
-                                    Sost.set(7,1,Integer.parseInt (voda.getText().toString().trim ()));
-                                    Sost.set(7,2,Integer.parseInt (poch.getText().toString().trim ()));
-                                    break;
-                                default:
-                                    osh.setText("Ошибка при вводе данных");
+class Izm : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.izm)
+        val back = findViewById<View>(R.id.dann3) as ImageButton
+        val change = findViewById<View>(R.id.dann4) as ImageButton
+        val nazv: EditText
+        val vozd: EditText
+        val voda: EditText
+        val poch: EditText
+        nazv = findViewById<View>(R.id.nazvReg) as EditText
+        vozd = findViewById<View>(R.id.sostVozd) as EditText
+        voda = findViewById<View>(R.id.sostVod) as EditText
+        poch = findViewById<View>(R.id.sostPoch) as EditText
+        back.setOnClickListener {
+            back.setImageResource(R.drawable.knopkaser_nazh)
+            object : CountDownTimer(300, 1000) {
+                override fun onTick(millisUntilFinished: Long) {}
+                override fun onFinish() {
+                    back.setImageResource(R.drawable.knopkaser)
+                    val i = Intent(this@Izm, Menu::class.java)
+                    startActivity(i)
+                }
+            }.start()
+        }
+        val osh = findViewById<View>(R.id.osh) as TextView
+        change.setOnClickListener {
+            change.setImageResource(R.drawable.knopkaser_nazh)
+            object : CountDownTimer(300, 1000) {
+                override fun onTick(millisUntilFinished: Long) {}
+                override fun onFinish() {
+                    change.setImageResource(R.drawable.knopkaser)
+                    if ((vozd.text.toString() == "0" || vozd.text.toString() == "1" || vozd.text.toString() == "2") && (voda.text.toString() == "0" || voda.text.toString() == "1" || voda.text.toString() == "2") && (poch.text.toString() == "0" || poch.text.toString() == "1" || poch.text.toString() == "2")) {
+                        osh.text = "Данные успешно изменены"
+                        when (nazv.text.toString()) {
+                            "Центральный" -> {
+                                Sost.set(0, 0, vozd.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(0, 1, voda.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(0, 2, poch.text.toString().trim { it <= ' ' }.toInt())
                             }
+                            "Северо-Западный" -> {
+                                Sost.set(1, 0, vozd.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(1, 1, voda.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(1, 2, poch.text.toString().trim { it <= ' ' }.toInt())
+                            }
+                            "Южный" -> {
+                                Sost.set(2, 0, vozd.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(2, 1, voda.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(2, 2, poch.text.toString().trim { it <= ' ' }.toInt())
+                            }
+                            "Северо-Кавказский" -> {
+                                Sost.set(3, 0, vozd.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(3, 1, voda.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(3, 2, poch.text.toString().trim { it <= ' ' }.toInt())
+                            }
+                            "Приволжский" -> {
+                                Sost.set(4, 0, vozd.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(4, 1, voda.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(4, 2, poch.text.toString().trim { it <= ' ' }.toInt())
+                            }
+                            "Уральский" -> {
+                                Sost.set(5, 0, vozd.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(5, 1, voda.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(5, 2, poch.text.toString().trim { it <= ' ' }.toInt())
+                            }
+                            "Сибирский" -> {
+                                Sost.set(6, 0, vozd.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(6, 1, voda.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(6, 2, poch.text.toString().trim { it <= ' ' }.toInt())
+                            }
+                            "Дальневосточный" -> {
+                                Sost.set(7, 0, vozd.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(7, 1, voda.text.toString().trim { it <= ' ' }.toInt())
+                                Sost.set(7, 2, poch.text.toString().trim { it <= ' ' }.toInt())
+                            }
+                            else -> osh.text = "Ошибка при вводе данных"
                         }
-
-
-
                     }
-                }.start();
-            }
-        });
-
-
+                }
+            }.start()
+        }
     }
 }

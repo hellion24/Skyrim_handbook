@@ -1,39 +1,35 @@
-package com.example.kursovaya;
+package com.example.kursovaya
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Window;
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.kursovaya.R
+import com.example.kursovaya.Sost
+import android.content.Intent
+import android.view.Window
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import static java.lang.Thread.sleep;
-
-public class MainActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
-        Sost.generate();
-        Thread logoTimer = new Thread() {
-            public void run() {
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
+        setContentView(R.layout.activity_main)
+        Sost.generate()
+        val logoTimer: Thread = object : Thread() {
+            override fun run() {
                 try {
-                    int logoTimer = 0;
-                    while(logoTimer < 1000) {
-                        sleep(100);
-                        logoTimer = logoTimer +100;
-                    };
-                    Intent i=new Intent(MainActivity.this,Menu.class);
-                    startActivity(i);
-                }
-                catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                finally{
-                    finish();
+                    var logoTimer = 0
+                    while (logoTimer < 1000) {
+                        sleep(100)
+                        logoTimer = logoTimer + 100
+                    }
+                    val i = Intent(this@MainActivity, Menu::class.java)
+                    startActivity(i)
+                } catch (e: InterruptedException) {
+                    e.printStackTrace()
+                } finally {
+                    finish()
                 }
             }
-        };
-        logoTimer.start();
+        }
+        logoTimer.start()
     }
 }

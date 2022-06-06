@@ -1,75 +1,56 @@
-package com.example.kursovaya;
+package com.example.kursovaya
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.kursovaya.R
+import android.widget.ImageButton
+import android.widget.TextView
+import android.os.CountDownTimer
+import android.content.Intent
+import android.view.View
+import android.widget.EditText
+import com.example.kursovaya.Izm
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Admin extends AppCompatActivity {
-
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin);
-        ImageButton back = (ImageButton)findViewById(R.id.dann2);
-        ImageButton confirm = (ImageButton)findViewById(R.id.dann5);
-
-        TextView osh = (TextView)findViewById(R.id.osh1);
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                back.setImageResource(R.drawable.knopkaser_nazh);
-                new CountDownTimer(300, 1000) {
-                    public void onTick(long millisUntilFinished) {
+class Admin : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.admin)
+        val back = findViewById<View>(R.id.dann2) as ImageButton
+        val confirm = findViewById<View>(R.id.dann5) as ImageButton
+        val osh = findViewById<View>(R.id.osh1) as TextView
+        back.setOnClickListener {
+            back.setImageResource(R.drawable.knopkaser_nazh)
+            object : CountDownTimer(300, 1000) {
+                override fun onTick(millisUntilFinished: Long) {}
+                override fun onFinish() {
+                    back.setImageResource(R.drawable.knopkaser)
+                    val i = Intent(this@Admin, Menu::class.java)
+                    startActivity(i)
+                }
+            }.start()
+        }
+        confirm.setOnClickListener {
+            val login: EditText
+            val pass: EditText
+            login = findViewById<View>(R.id.login) as EditText
+            pass = findViewById<View>(R.id.login2) as EditText
+            confirm.setImageResource(R.drawable.knopkaser_nazh)
+            object : CountDownTimer(300, 1000) {
+                override fun onTick(millisUntilFinished: Long) {}
+                override fun onFinish() {
+                    confirm.setImageResource(R.drawable.knopkaser)
+                    val log1: String
+                    val pas1: String
+                    log1 = login.text.toString().trim { it <= ' ' }
+                    pas1 = pass.text.toString().trim { it <= ' ' }
+                    if (log1 == "admin" && pas1 == "admin") {
+                        val i = Intent(this@Admin, Izm::class.java)
+                        startActivity(i)
+                    } else {
+                        osh.text = "Неверные данные"
                     }
-
-                    public void onFinish() {
-                        back.setImageResource(R.drawable.knopkaser);
-                        Intent i = new Intent(Admin.this, Menu.class);
-                        startActivity(i);
-                    }
-                }.start();
-            }
-        });
-
-        confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                EditText login, pass;
-                login = (EditText)findViewById(R.id.login);
-                pass = (EditText)findViewById(R.id.login2);
-
-
-                confirm.setImageResource(R.drawable.knopkaser_nazh);
-                new CountDownTimer(300, 1000) {
-                    public void onTick(long millisUntilFinished) {
-                    }
-
-                    public void onFinish() {
-
-                        confirm.setImageResource(R.drawable.knopkaser);
-                        String log1, pas1;
-                        log1 = login.getText().toString().trim();
-                        pas1 = pass.getText().toString().trim();
-                        if((log1.equals("admin"))&&(pas1.equals("admin"))) {
-                            Intent i = new Intent(Admin.this, Izm.class);
-                            startActivity(i);
-                        }
-                        else{
-                            osh.setText("Неверные данные");
-                        }
-                    }
-                }.start();
-            }
-        });
+                }
+            }.start()
+        }
     }
 }

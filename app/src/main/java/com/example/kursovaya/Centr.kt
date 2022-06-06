@@ -1,47 +1,39 @@
-package com.example.kursovaya;
+package com.example.kursovaya
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.kursovaya.R
+import android.widget.ImageButton
+import android.os.CountDownTimer
+import android.content.Intent
+import android.view.View
+import android.widget.TextView
+import com.example.kursovaya.Sost
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class Centr extends AppCompatActivity {
-
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.centr);
-        ImageButton back = (ImageButton)findViewById(R.id.dann3);
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                back.setImageResource(R.drawable.knopkaser_nazh);
-                new CountDownTimer(300, 1000) {
-                    public void onTick(long millisUntilFinished) {
-                    }
-
-                    public void onFinish() {
-                        back.setImageResource(R.drawable.knopkaser);
-                        Intent i = new Intent(Centr.this, Menu.class);
-                        startActivity(i);
-                    }
-                }.start();
-            }
-        });
-
-        TextView vozd,voda,poch;
-        vozd = (TextView)findViewById(R.id.textView30);
-        voda = (TextView)findViewById(R.id.textView32);
-        poch = (TextView)findViewById(R.id.textView34);
-        vozd.setText(Sost.get(0,0));
-        voda.setText(Sost.get(0,1));
-        poch.setText(Sost.get(0,2));
+class Centr : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.centr)
+        val back = findViewById<View>(R.id.dann3) as ImageButton
+        back.setOnClickListener {
+            back.setImageResource(R.drawable.knopkaser_nazh)
+            object : CountDownTimer(300, 1000) {
+                override fun onTick(millisUntilFinished: Long) {}
+                override fun onFinish() {
+                    back.setImageResource(R.drawable.knopkaser)
+                    val i = Intent(this@Centr, Menu::class.java)
+                    startActivity(i)
+                }
+            }.start()
+        }
+        val vozd: TextView
+        val voda: TextView
+        val poch: TextView
+        vozd = findViewById<View>(R.id.textView30) as TextView
+        voda = findViewById<View>(R.id.textView32) as TextView
+        poch = findViewById<View>(R.id.textView34) as TextView
+        vozd.text = Sost.get(0, 0)
+        voda.text = Sost.get(0, 1)
+        poch.text = Sost.get(0, 2)
     }
 }
