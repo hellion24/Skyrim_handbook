@@ -6,6 +6,7 @@ import com.example.kursovaya.R
 import com.example.kursovaya.Sost
 import android.content.Intent
 import android.view.Window
+import com.google.firebase.database.DatabaseReference
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,10 +1,16 @@
 package com.example.kursovaya
 
 import com.example.kursovaya.Sost
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 object Sost {
+    private lateinit var database: DatabaseReference
     private val sost = Array(8) { IntArray(3) }
+
     fun generate() {
+        database = Firebase.database.reference
         sost[1][1] = 1
         sost[1][2] = 1
         sost[1][0] = 2
@@ -26,7 +32,7 @@ object Sost {
         sost[7][1] = 1
         sost[7][2] = 0
         sost[7][0] = 2
-        sost[0][1] = 1
+        sost[0][1] = 2
         sost[0][2] = 2
         sost[0][0] = 1
     }
