@@ -101,14 +101,28 @@
                 android:id="@+id/skills"
                 android:layout_width="320dp"
                 android:layout_height="50dp"
-                android:layout_marginBottom="200dp"
+                android:alpha="0.85"
+                android:background="@color/cardview_shadow_end_color"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quests"
+                app:layout_constraintBottom_toTopOf="@id/skills3"
+                app:srcCompat="@drawable/knopkaser" />
+
+            <ImageButton
+                android:id="@+id/skills3"
+                android:layout_width="320dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="170dp"
                 android:alpha="0.85"
                 android:background="@color/cardview_shadow_end_color"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toTopOf="@+id/svyaz"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.507"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/quests"
+                app:layout_constraintTop_toBottomOf="@+id/skills"
                 app:srcCompat="@drawable/knopkaser" />
 
             <ImageButton
@@ -123,7 +137,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/skills"
+                app:layout_constraintTop_toBottomOf="@+id/skills3"
                 app:srcCompat="@drawable/knopkaser" />
 
             <TextView
@@ -181,6 +195,20 @@
                 app:layout_constraintEnd_toEndOf="@+id/skills"
                 app:layout_constraintStart_toStartOf="@+id/skills"
                 app:layout_constraintTop_toTopOf="@+id/skills" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Хадвар"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/skills3"
+                app:layout_constraintEnd_toEndOf="@+id/skills3"
+                app:layout_constraintStart_toStartOf="@+id/skills3"
+                app:layout_constraintTop_toTopOf="@+id/skills3" />
 
             <TextView
                 android:id="@+id/textView11"

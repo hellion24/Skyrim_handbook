@@ -55,6 +55,11 @@ class Centr : AppCompatActivity() {
                         textt.text = getString(R.string.pers4i)
                         image.setImageResource(R.drawable.pers4)
                     }
+                    "5" -> {
+                        head.text = getString(R.string.pers5)
+                        textt.text = getString(R.string.pers5i)
+                        image.setImageResource(R.drawable.pers5)
+                    }
                 }
             }
             "skills" -> {
@@ -78,6 +83,11 @@ class Centr : AppCompatActivity() {
                         head.text = getString(R.string.skills4)
                         textt.text = getString(R.string.skills4i)
                         image.setImageResource(R.drawable.skills4i)
+                    }
+                    "5" -> {
+                        head.text = getString(R.string.skills5)
+                        textt.text = getString(R.string.skills5i)
+                        image.setImageResource(R.drawable.skills5i)
                     }
                 }
             }
@@ -103,6 +113,11 @@ class Centr : AppCompatActivity() {
                         textt.text = getString(R.string.quests4i)
                         image.setImageResource(R.drawable.quests4i)
                     }
+                    "5" -> {
+                        head.text = getString(R.string.quests5)
+                        textt.text = getString(R.string.quests5i)
+                        image.setImageResource(R.drawable.quests5i)
+                    }
                 }
             }
             "locations" -> {
@@ -126,6 +141,11 @@ class Centr : AppCompatActivity() {
                         head.text = getString(R.string.locations4)
                         textt.text = getString(R.string.locations4i)
                         image.setImageResource(R.drawable.locations4i)
+                    }
+                    "5" -> {
+                        head.text = getString(R.string.locations5)
+                        textt.text = getString(R.string.locations5i)
+                        image.setImageResource(R.drawable.locations5i)
                     }
                 }
             }
