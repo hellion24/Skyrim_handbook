@@ -2,18 +2,14 @@ package com.example.kursovaya
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.kursovaya.R
-import com.example.kursovaya.Sost
 import android.content.Intent
 import android.view.Window
-import com.google.firebase.database.DatabaseReference
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_main)
-        Sost.generate()
         val logoTimer: Thread = object : Thread() {
             override fun run() {
                 try {
